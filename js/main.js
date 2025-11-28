@@ -3,7 +3,7 @@ const btnConvertir = document.getElementById("btnConvertir");
 //campo de llenado
 const txtCelcius = document.getElementById("txtCelcius");
 //campos donde va la conversion
-const putCelcius = document.getElementById("putCelcius");
+const putCelsius = document.getElementById("putCelsius");
 const putFahrenheit = document.getElementById("putFahrenheit");
 const putKelvin = document.getElementById("putKelvin");
 
@@ -52,9 +52,10 @@ btnConvertir.addEventListener("click", function (event) {
         alertValidaciones.style.display = "none";
         let celcius = Number(txtCelcius.value);
         console.log(celcius);
-        //putCelcius.value =celcius;
+        putCelsius.value =celcius;
         putFahrenheit.value = conversionFaren(celcius);
         putKelvin.value = conversionKelvin(celcius);
+        txtCelcius.value="";
     }
 
 
