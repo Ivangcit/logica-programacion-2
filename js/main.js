@@ -1,11 +1,11 @@
 //boton
-const btnConvertir=document.getElementById("btnConvertir");
+const btnConvertir = document.getElementById("btnConvertir");
 //campo de llenado
-const txtCelcius=document.getElementById("txtCelcius");
+const txtCelcius = document.getElementById("txtCelcius");
 //campos donde va la conversion
-const putCelcius=document.getElementById("putCelcius");
-const putFahrenheit=document.getElementById("putFahrenheit");
-const putKelvin=document.getElementById("putKelvin");
+const putCelcius = document.getElementById("putCelcius");
+const putFahrenheit = document.getElementById("putFahrenheit");
+const putKelvin = document.getElementById("putKelvin");
 
 
 //funciones
@@ -23,21 +23,21 @@ function validarCantidad(cantidad) {
     return true;
 } //validarCantidad
 
-function conversionFaren(celcius){
-return ((celcius*1.8)+32);
+function conversionFaren(celcius) {
+    return ((celcius * 1.8) + 32);
 }//conversionFaren
 
-function conversionKelvin(celcius){
-return (celcius+273.5);
+function conversionKelvin(celcius) {
+    return (celcius + 273.5);
 }//conversionKelvin
 
 
-btnConvertir.addEventListener("click",function(event){
+btnConvertir.addEventListener("click", function (event) {
     event.preventDefault();
     //bandera
-    let isValid=true;
+    let isValid = true;
 
-     if (!validarCantidad(txtCelcius.value)) {
+    if (!validarCantidad(txtCelcius.value)) {
         txtCelcius.style.border = "solid thin red";
         alertValidacionesTexto.innerHTML +=
             "<strong>La temperatura no es correcta, verifique</strong><br/>";
@@ -45,12 +45,16 @@ btnConvertir.addEventListener("click",function(event){
         isValid = false;
     }
 
-    if(isValid){
-        let celcius=Number(txtCelcius.value);
+    if (isValid) {
+
+        txtCelcius.style.border = "";
+        alertValidacionesTexto.innerHTML = "";
+        alertValidaciones.style.display = "none";
+        let celcius = Number(txtCelcius.value);
         console.log(celcius);
-       // putCelcius.value="txtCelcius";
-        putFahrenheit.value=conversionFaren(celcius);
-        putKelvin.value=conversionKelvin(celcius);
+        //putCelcius.value =celcius;
+        putFahrenheit.value = conversionFaren(celcius);
+        putKelvin.value = conversionKelvin(celcius);
     }
 
 
