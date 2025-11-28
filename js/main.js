@@ -40,7 +40,7 @@ btnConvertir.addEventListener("click",function(event){
      if (!validarCantidad(txtCelcius.value)) {
         txtCelcius.style.border = "solid thin red";
         alertValidacionesTexto.innerHTML +=
-            "<strong>La cantidad no es correcta</strong><br/>";
+            "<strong>La temperatura no es correcta, verifique</strong><br/>";
         alertValidaciones.style.display = "block";
         isValid = false;
     }
@@ -48,9 +48,9 @@ btnConvertir.addEventListener("click",function(event){
     if(isValid){
         let celcius=Number(txtCelcius.value);
         console.log(celcius);
-        putCelcius.innerText=celcius;
-        putFahrenheit.innerText=conversionFaren(celcius);
-        putKelvin=conversionKelvin(celcius);
+       // putCelcius.value="txtCelcius";
+        putFahrenheit.value=conversionFaren(celcius);
+        putKelvin.value=conversionKelvin(celcius);
     }
 
 
